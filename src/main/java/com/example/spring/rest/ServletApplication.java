@@ -14,14 +14,17 @@
  * limitations under the License.
  */
 
-package com.example.spring.rest.servlet;
+package com.example.spring.rest;
 
+import org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication(scanBasePackages={"com.example.spring.rest"})
+@SpringBootApplication
 public class ServletApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) throws Exception {
@@ -32,5 +35,39 @@ public class ServletApplication extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(ServletApplication.class);
 	}
+	
+	/*
+	 * Servlet mapping configurations for RestEasy Servlet
+	 * This Method will map the Servlet configurations that used instead of the web.xml
+	 * 
+	 * @return 
+	 * 
+	 */
+	/*
+	
+	@Bean
+	public ServletRegistrationBean dispatcherServletRegistration() {
+		ServletRegistrationBean registrationBean = 
+				new ServletRegistrationBean(new HttpServletDispatcher(), "/api/*");
+		
+		registrationBean.addInitParameter("javax.ws.rs.Application", "com.example.spring.rest.resteasy.ResteasyApplication");
+		
+		return registrationBean;
+		
+	}
+	
+	
+	@Bean
+	public ServletRegistrationBean helloServletRegistration() {
+		ServletRegistrationBean registrationBean = 
+				new ServletRegistrationBean(new HttpServletDispatcher(), "/message");
+		
+		registrationBean.addInitParameter("message", "Hello World");
+		
+		return registrationBean;
+	}
+
+	*/
+	
 
 }
