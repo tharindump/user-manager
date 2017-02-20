@@ -54,8 +54,7 @@
 		<!-- Resteasy dependancies -->
 		
 		<!-- *UN_COMMENT* this dependancy for enable resteasy autoconfiguration for spring-boot -->
-		<!-- --> 
-			 
+		<!-- 
 			<dependency>
 			   <groupId>com.paypal.springboot</groupId>
 			   <artifactId>resteasy-spring-boot-starter</artifactId>
@@ -63,7 +62,7 @@
 			   <scope>runtime</scope>
 			</dependency>
 		 
-		<!--  -->
+		 -->
 
 
 	</dependencies>
